@@ -12,6 +12,6 @@ namespace MyApp.Core.Entites
         public string Name { get; set; } = null;
         public string Email { get; set; } = null;
         public double Salary { get; set; }
-        public int PhoneNumber { get; set; } = 0;
+        public string PhoneNumber { get; set; } = null;
     }
 }

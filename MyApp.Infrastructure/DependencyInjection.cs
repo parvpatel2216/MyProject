@@ -20,7 +20,7 @@ namespace MyApp.Infrastructure
                 options.UseSqlServer("Server=DESKTOP-L2UK954\\MSSQLSERVER01;Database=TestAPIDb;Trustd_Connection=True;TrustServerCertificate=true;MultipleActiveResults=true");
             });
             
-            services.AddScoped<IEmployeeRepository, EmployeeRepositoy>();
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             return services;
         }
     }

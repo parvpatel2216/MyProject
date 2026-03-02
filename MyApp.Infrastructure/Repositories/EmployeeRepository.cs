@@ -3,12 +3,11 @@ using MyApp.Core.Entites;
 using MyApp.Core.Interfaces;
 using MyApp.Infrastructure.Data;
 
-
 namespace MyApp.Infrastructure.Repositories
 {
-    internal class EmployeeRepositoy(AppDbContext dbContext) : IEmployeeRepository
+    public class EmployeeRepository(AppDbContext dbContext) : IEmployeeRepository
     {
-        public async Task<IEnumerable<EmployeeEntity>> GetAllEmployees()
+        public async Task<IEnumerable<EmployeeEntity>> GetEmployees()
         {
             return await dbContext.Employees.ToListAsync();
         }
@@ -50,6 +49,11 @@ namespace MyApp.Infrastructure.Repositories
                 return await dbContext.SaveChangesAsync() > 0;
             }
             return false;
+        }
+
+        public Task<EmployeeEntity> GetEmployeeByIdAsync(Guid employeeId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

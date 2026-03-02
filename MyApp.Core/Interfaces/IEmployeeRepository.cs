@@ -9,7 +9,10 @@ namespace MyApp.Core.Interfaces
 {
     public interface IEmployeeRepository
     {
-        Task<EmployeeEntity> AddEmployeeAsync(object employee);
-        Task<IEnumerable<EmployeeEntity>> GetAllEmployees();
+        Task<EmployeeEntity> AddEmployeeAsync(EmployeeEntity employee);
+        Task<IEnumerable<EmployeeEntity>> GetEmployees();
+        Task<EmployeeEntity> GetEmployeeByIdAsync(int id);
+        Task<EmployeeEntity> UpdateEmployeeAsync(int employeeId, EmployeeEntity entity);
+        Task<bool> DeleteEmployeeAsync(int employeeId);
     }
 }
